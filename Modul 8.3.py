@@ -61,5 +61,4 @@ button_stop.pack(pady=20)
 
 t=None
 check()
-
 window.mainloop()
