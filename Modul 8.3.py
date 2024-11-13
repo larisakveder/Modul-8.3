@@ -1,3 +1,4 @@
+import tkinter
 from tkinter import *
 from tkinter import messagebox as mb
 from tkinter import simpledialog as sd
@@ -42,6 +43,10 @@ def play_snd():
     pygame.mixer.music.load("rem.mp3")
     pygame.mixer.music.play()
 
+def stop_snd():
+    pygame.mixer.music.stop()
+    t = tkinter.messagebox.showinfo(title="Таймер остановлен", message="Таймер остановлен")
+
 window=Tk()
 window.title("Напоминание со звуком")
 
@@ -50,7 +55,8 @@ label.pack(pady=20)
 
 button=Button(text="Установить", font=("Courier",20), command=sett)
 button.pack(pady=20)
-
+button_stop=Button(text="Остановить музыку", font=("Courier",15), command=stop_snd)
+button_stop.pack(pady=20)
 
 t=None
 check()
