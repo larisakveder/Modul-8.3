@@ -34,6 +34,7 @@ def check():
         print(now)
         if now>=t:
             play_snd()
+            tkinter.messagebox.showinfo(title="Напоминание", message="Сработал таймер")
             t=None
     window.after(10000, check)
 
@@ -41,11 +42,11 @@ def check():
 def play_snd():
     pygame.mixer.init()
     pygame.mixer.music.load("rem.mp3")
-    pygame.mixer.music.play()
+    pygame.mixer.music.play(-1)
 
 def stop_snd():
     pygame.mixer.music.stop()
-    t = tkinter.messagebox.showinfo(title="Таймер остановлен", message="Таймер остановлен")
+    tkinter.messagebox.showinfo(title="Таймер остановлен", message="Таймер остановлен")
 
 window=Tk()
 window.title("Напоминание со звуком")
